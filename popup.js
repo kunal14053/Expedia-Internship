@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var json_ODArray=json_ProductArray[0].flightOriginDestinationDomainList
     var OD_list="";
 
-    console.log(json_ODArray);
+    //console.log(json_ODArray);
 
     for(var j=0;j<json_ODArray.length-1;j++)
     {
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.setTimeout(function () { 
           result_list=xhr.responseText;
           obj_array=JSON.parse(result_list);
-          console.log(obj_array);
+         // console.log(obj_array);
           chrome.storage.local.set({
             'objectArray': obj_array
           });

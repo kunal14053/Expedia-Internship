@@ -1,0 +1,45 @@
+textarea {
+    /*
+    font-family: "Times New Roman", Times, serif,bold;
+    
+    display: block;
+     */
+     width: 600px;
+	height: 120px;
+    font-size: 15px;
+    
+	padding: 5px;
+    margin-bottom:50px;
+	font-style: italic;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+#demo{
+	background-color: #FFFFFF; 
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+    outline:none;
+    width: 100px;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+
+
+
+table, th, td {
+    
+    border: none;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 700px;
+    margin: 20px;
+}
