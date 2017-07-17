@@ -14,17 +14,25 @@
 // fruits[fruits.length] = "Lemon";     // adds a new element (Lemon) to fruits
 
 document.addEventListener('DOMContentLoaded', function() {	
-chrome.storage.sync.get('objectArray', function (items) {
-	console.log('start');
+chrome.storage.local.get('objectArray', function (items) {
 	
-	d=[12, 19, 3, 5, 2, 3];
-
 	
-		console.log("hellos")		
+	d=[];
+    l=[];
+	console.log(items);
 
-l=["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+    var result = items.objectArray;
+    
+    console.log(result);
 
-console.log('end');
+    for (var i = 0; i < result.length; i++) {
+	   l[l.length]=result[i].DateTime;
+       d[d.length]=result[i].price;
+    }
+
+
+
+
 var ctx = document.getElementById("myChart").getContext('2d');
 
 var myChart = new Chart(ctx, {
