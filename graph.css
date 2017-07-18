@@ -1,14 +1,9 @@
 textarea {
-    /*
-    font-family: "Times New Roman", Times, serif,bold;
     
-    display: block;
-     */
-     width: 600px;
+    width: 600px;
 	height: 120px;
     font-size: 15px;
-    
-	padding: 5px;
+    padding: 5px;
     margin-bottom:50px;
 	font-style: italic;
 	font-family: Tahoma, sans-serif;
@@ -18,16 +13,16 @@ textarea {
 
 #demo{
 	background-color: #FFFFFF; 
-    border: 1px solid black;
+    border: none;
     color: black;
-    border-radius: 5px;
     outline:none;
-    width: 100px;
-    
+    margin-bottom:10px;
+    font-size: 15px;
+    font-style: bold;
+    font-family: Tahoma, sans-serif;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 10px;
+    
 }
 
 
@@ -43,3 +38,10 @@ table {
     width: 700px;
     margin: 20px;
 }
+
+
+body {  
+  
+  padding: 16px;
+}
+
