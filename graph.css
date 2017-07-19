@@ -12,9 +12,11 @@ textarea {
 }
 
 #demo{
-	background-color: #FFFFFF; 
+	background-color: Transparent;
+    background-repeat:no-repeat;
     border: none;
-    color: black;
+    cursor:pointer;
+    overflow: hidden;
     outline:none;
     margin-bottom:10px;
     font-size: 15px;
