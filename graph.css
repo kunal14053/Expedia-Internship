@@ -41,7 +41,7 @@ table {
 
 
 body {  
-  
+  background-image: url("texture.png");
   padding: 16px;
 }
 

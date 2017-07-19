@@ -65,11 +65,11 @@ var myChart = new Chart(ctx, {
             label: 'Price',
             data:d ,
             backgroundColor: [
-                'rgba(255, 255, 0, 0.5)',
+                'rgba(133, 193, 233  , 0.65)',
                 
             ],
             borderColor: [
-                'rgba(255,0,0,1)',
+                'rgba(28, 46, 75  ,1)',
                 
             ],
             borderWidth: 2
