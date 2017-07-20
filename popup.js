@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var rowCount = table.rows.length;
     var row = table.insertRow(rowCount);
     var json_Offer=JSON.parse(obj[i].offer);
-    console.log(json_Offer);
+    
     var json_ProductArray=json_Offer.flightProductDomainList;
     var json_ODArray=json_ProductArray[0].flightOriginDestinationDomainList;
     var OD_list="";
@@ -65,10 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
     table.rows[rowCount].cells[4].style.display="none";
     row.insertCell(5).innerHTML=obj[i].price;
     table.rows[rowCount].cells[5].style.display="none";
+    row.insertCell(6).innerHTML=obj[i].DateTime;
+    table.rows[rowCount].cells[6].style.display="none";
 
-    row.insertCell(6).innerHTML="<img id="+"Analyze"+rowCount+" type='button' src='./analyze.png'  />";
 
-    row.insertCell(7).innerHTML="<img id="+rowCount+" type='button' src='./cancel.png'  />";
+    row.insertCell(7).innerHTML="<img id="+"Analyze"+rowCount+" type='button' src='./analyze.png'  />";
+
+    row.insertCell(8).innerHTML="<img id="+rowCount+" type='button' src='./cancel.png'  />";
 
 
     
@@ -79,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var test=JSON.stringify({
         offer: table.rows[index].cells[4].innerText,
-        DateTime: table.rows[index].cells[1].innerText,
+        DateTime: table.rows[index].cells[6].innerText,
         price: Number(table.rows[index].cells[5].innerText),  
       });
       xhr.send(test);
@@ -103,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         var test=JSON.stringify({
         offer: table.rows[index].cells[4].innerText,
-        DateTime: table.rows[index].cells[1].innerText,
+        DateTime: table.rows[index].cells[6].innerText,
         price: Number(table.rows[index].cells[5].innerText),  
         });
         xhr.send(test);
@@ -115,12 +118,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.setTimeout(function () { 
           result_list=xhr.responseText;
+          console.log(result_list);
+          
           obj_array=JSON.parse(result_list);
           chrome.storage.local.set({
-            'objectArray': obj_array
+            'objectArray': [obj_array,table.rows[index].cells[4].innerText,{
+        offer: table.rows[index].cells[4].innerText,
+        DateTime: table.rows[index].cells[6].innerText,
+        price: Number(table.rows[index].cells[5].innerText),  
+        }]
+
           });
           chrome.tabs.create({url: chrome.extension.getURL('./graph.html')});
-        }, 1000);  
+          
+        }, 5000);  
         
     });
   };
