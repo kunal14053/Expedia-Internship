@@ -165,15 +165,16 @@ function applyFilter()
         
         window.setTimeout(function () { 
         var filteredOffer=xhr.responseText;
-        console.log(filteredOffer);
+        result1=JSON.parse(filteredOffer);
+        
         data=[];
         l=[];
         d=[];
         data[data.length]=["DateTime","Price"];
        
 
-        for (var i = 0; i < result.length; i++) {
-            var res = result[i].DateTime.split(".");
+        for (var i = 0; i < result1.length; i++) {
+            var res = result1[i].DateTime.split(".");
             var res1=res[0].split("T");
             var resd=res1[0].split("-");
             var rest=res1[1].split(":");
