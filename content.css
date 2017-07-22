@@ -13,12 +13,13 @@ body{
 }
 
 #create{
-	background-color: #FFF000; 
+	background-color: #FFC708; 
     border: 2px solid black;
     color: black;
     border-radius: 5px;
-   outline:none;
-    width: 800px;
+    outline:none;
+    width: 770px;
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

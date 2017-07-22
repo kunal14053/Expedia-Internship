@@ -27,24 +27,23 @@ textarea {
     
 }
 
-
-
-
 table, th, td {
     
     border: none;
+    
     text-align: center;
 }
 
 table {
     border-collapse: collapse;
     width: 700px;
+    
     margin: 20px;
 }
 
 
 body {  
-  background-color: #BAB8B8    ;
+  
   padding: 16px;
 }
 

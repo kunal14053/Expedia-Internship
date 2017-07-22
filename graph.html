@@ -1,17 +1,30 @@
 <!doctype html>
 
 <html>
+  
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Analyzing</title>
+    <link rel="icon" href="analyze.png"/>
+    <link rel="stylesheet" type="text/css" href="graph.css">
+    
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js'></script>
     <script type="text/javascript" src="graph.js"></script>
-     <link rel="stylesheet" type="text/css" href="graph.css">
-    </head>
-  <body>
-  	  <h1 style="text-align-last: center" > Analyzing Offer</h1>
-  		
+  </head>
 
-    <div style="width:800px; margin:0 auto;">
+  <body>
+  	 
+    
+    
+    <div class="container">
+    
+   
+    <h1 style="text-align-last: center" id="OfferNumber"> </h1>  		
+    
+    <div style="width:800px; margin:0 auto">
+   
     <table border="1" cellpadding="2">
       <tr>
           <th id="eapid-tpid" style="font-size:15px">TPID/EPID</b></th>
@@ -20,25 +33,36 @@
           <th id="date" style="font-size:15px"><b>Date</b></th>
       </tr>
     </table>
+   
     </div>
 
 
+
+   
+    
   	<button id="demo" >Click To Expand Offer</button>
+    
+   
+    
 
   	<textarea id="json" readonly style="display:none" ></textarea>
   	
-     <canvas id="myChart" class="chart"  width="300" height="100"></canvas>
+    <canvas id="myChart" class="chart"  width="300" height="100"></canvas>
+
      <button id="download">Export data to CSV file</button>
+    
      
-     <p >Filter</p>
-     <br>
-     Start Date: <input type="text" id="StartDate">
-     Start Time: <input type="text" id="StartTime"><br>
-     <br>
-     End Date: <input type="text" id="EndDate">
-     End Time: <input type="text" id="EndTime"><br>
-     <br>
-     <button id="filter" >Apply Filter</button>
+    <h4 >Filter</h4>
+    <br>
+    Start Date: <input type="text" id="StartDate">
+    Start Time: <input type="text" id="StartTime"><br>
+    <br>
+    End Date: <input type="text" id="EndDate">
+    End Time: <input type="text" id="EndTime"><br>
+    <br>
+    <button id="filter" >Apply Filter</button>
+
+    </div>
 
   </body>
   

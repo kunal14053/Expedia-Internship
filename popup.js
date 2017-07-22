@@ -4,7 +4,7 @@
 var x=null,y=null,z=null;
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET", "http://insurance-flights-pdp-trends.us-west-2.test.expedia.com/trends/getAllS", false);
+xhr.open("GET", "http://insurance-flights-pdp-trends.us-west-2.prod.expedia.com/trends/getAllS", false);
 xhr.send();
 var result = xhr.responseText;
 obj = JSON.parse(result);
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById(rowCount).addEventListener('click', function() {
       var index = this.parentNode.parentNode.rowIndex;
       var table = document.getElementById("myTableData");
-      xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.test.expedia.com/trends/deleteOffer");
+      xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.prod.expedia.com/trends/deleteOffer");
       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var test=JSON.stringify({
         offer: table.rows[index].cells[4].innerText,
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         
-        xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.test.expedia.com/trends/analyzeOffer");
+        xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.prod.expedia.com/trends/analyzeOffer");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         var test=JSON.stringify({
         offer: table.rows[index].cells[4].innerText,
@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         window.setTimeout(function () { 
           result_list=xhr.responseText;
-          console.log(result_list);
           
           obj_array=JSON.parse(result_list);
           chrome.storage.local.set({
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         offer: table.rows[index].cells[4].innerText,
         DateTime: table.rows[index].cells[6].innerText,
         price: Number(table.rows[index].cells[5].innerText),  
-        }]
+        },index]
 
           });
           chrome.tabs.create({url: chrome.extension.getURL('./graph.html')});

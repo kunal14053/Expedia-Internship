@@ -8,6 +8,9 @@ chrome.storage.local.get('objectArray', function (items) {
     l=[];
     data=[];
     var result = items.objectArray[0];
+    
+    document.getElementById('OfferNumber').innerHTML="Analyzing Offer: "+items.objectArray[3];
+
 
     data[data.length]=["DateTime","Price"];
        
@@ -63,7 +66,7 @@ chrome.storage.local.get('objectArray', function (items) {
     json_flightSegmentDomainList=json_ODArray[json_ODArray.length-1].flightSegmentDomainList;
     OD_list=OD_list+json_flightSegmentDomainList[0].carrierCode;  
 
-    
+        
     document.getElementById('trip-type').innerHTML="Trip Type: "+json_Offer.tripType;
     document.getElementById('eapid-tpid').innerHTML="TPID-EAPID: "+json_Offer.tpid+"/"+json_Offer.eapid;
     document.getElementById('carrier-code').innerHTML="Carrier Code: "+OD_list ;
@@ -154,7 +157,7 @@ function applyFilter()
         var end=document.getElementById('EndDate').value+"T"+document.getElementById('EndTime').value+"Z";
         
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.test.expedia.com/trends/filterOffer");
+        xhr.open("POST", "http://insurance-flights-pdp-trends.us-west-2.prod.expedia.com/trends/filterOffer");
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         var test1=JSON.stringify({
         "subscriberOffers": items.objectArray[2] ,
@@ -166,10 +169,11 @@ function applyFilter()
         window.setTimeout(function () { 
         var filteredOffer=xhr.responseText;
         result1=JSON.parse(filteredOffer);
-        
+        console.log(result1)
         data=[];
         l=[];
         d=[];
+        data=[];
         data[data.length]=["DateTime","Price"];
        
 
@@ -180,8 +184,8 @@ function applyFilter()
             var rest=res1[1].split(":");
         
             l[l.length]=new Date(resd[0],resd[1],resd[2],rest[0],rest[1],rest[2]) ;
-            d[d.length]=result[i].price;
-            data[data.length]=[result[i].DateTime,result[i].price];
+            d[d.length]=result1[i].price;
+            data[data.length]=[result1[i].DateTime,result1[i].price];
         }
 
         var myChart = new Chart(ctx, {
