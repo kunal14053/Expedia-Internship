@@ -18,7 +18,7 @@
   	 
     
     
-    <div class="container">
+   
     
    
     <h1 style="text-align-last: center" id="OfferNumber"> </h1>  		
@@ -47,22 +47,24 @@
 
   	<textarea id="json" readonly style="display:none" ></textarea>
   	
-    <canvas id="myChart" class="chart"  width="300" height="100"></canvas>
-
+    <div>
+    <canvas id="myChart" class="chart"   width="300" height="100"></canvas>
+    </div>
+    
      <button id="download">Export data to CSV file</button>
     
-     
-    <h4 >Filter</h4>
+    <div id="hello"> 
+    <h2 >Filter</h2>
     <br>
     Start Date: <input type="text" id="StartDate">
     Start Time: <input type="text" id="StartTime"><br>
     <br>
-    End Date: <input type="text" id="EndDate">
+    End Date: <input type="text" id="EndDate">&nbsp;&nbsp;
     End Time: <input type="text" id="EndTime"><br>
     <br>
     <button id="filter" >Apply Filter</button>
-
     </div>
+    
 
   </body>
   

@@ -11,19 +11,37 @@ textarea {
 	background-repeat: no-repeat;
 }
 
-#demo,#download{
+
+
+
+#filter,#demo,#download{
 	background-color: Transparent;
-    background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    height: 20px
     margin-bottom:10px;
     font-size: 15px;
     font-style: bold;
     font-family: Tahoma, sans-serif;
     text-align: center;
     display: inline-block;
+    
+}
+
+
+input{
+    font-size: 15px;
+    font-style: bold;
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+}
+
+#hello{
+
+    width: 800px;
+    height: 170px;
     
 }
 
@@ -36,14 +54,13 @@ table, th, td {
 
 table {
     border-collapse: collapse;
-    width: 700px;
-    
+    width: 700px;   
     margin: 20px;
 }
 
 
 body {  
-  
+  background-color: #F4F6F7           ;
   padding: 16px;
 }
 

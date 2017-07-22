@@ -125,7 +125,8 @@ var myChart = new Chart(ctx, {
             
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                    fontColor: 'black'
                 },
                 scaleLabel: {
                 display: true,
@@ -134,6 +135,11 @@ var myChart = new Chart(ctx, {
             }],
 
             xAxes: [{
+
+                ticks: {
+                    beginAtZero:true,
+                    fontColor: 'black'
+                }, 
                 valueFormatString: "DDDD MMM YYYY HH:mm:ss k",
                 
                 scaleLabel: {
@@ -225,7 +231,8 @@ function applyFilter()
             
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                    fontColor: 'black'
                 },
                 scaleLabel: {
                 display: true,
@@ -234,6 +241,12 @@ function applyFilter()
             }],
 
             xAxes: [{
+
+                ticks: {
+                    beginAtZero:true,
+                    fontColor: 'black'
+                },    
+
                 valueFormatString: "DDDD MMM YYYY HH:mm:ss k",
                 
                 scaleLabel: {
