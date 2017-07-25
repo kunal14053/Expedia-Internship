@@ -1,6 +1,6 @@
 textarea {
     
-    width: 600px;
+    width: 800px;
 	height: 120px;
     font-size: 15px;
     padding: 5px;
@@ -15,19 +15,19 @@ textarea {
 
 
 #filter,#demo,#download{
-	background-color: Transparent;
-    border: none;
+	
+    
     cursor:pointer;
     overflow: hidden;
     outline:none;
-    height: 20px
+    
     margin-bottom:10px;
     font-size: 15px;
-    font-style: bold;
+    
     font-family: Tahoma, sans-serif;
     text-align: center;
     display: inline-block;
-    
+    max-width: 500px;
 }
 
 
@@ -39,7 +39,7 @@ input{
 }
 
 #hello{
-
+    font-weight: bold;
     width: 800px;
     height: 170px;
     

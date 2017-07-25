@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Test",
+  "name": "PDP Analysis",
   "description": "This is a test extension",
   "version": "2.0",
 
